@@ -9,8 +9,14 @@ import sys
 success = True
 
 if len(sys.argv) > 1:
-    wd = webdriver.PhantomJS() # or add to your PATH
-    wd.set_window_size(1024, 768) # optional
+    if (sys.argv[2] == "silent"):
+        wd = webdriver.PhantomJS() # or add to your PATH
+        wd.set_window_size(1024, 768) # optional
+        wd.implicitly_wait(60)
+    else:
+        wd = WebDriver()
+        wd.implicitly_wait(60)
+
 else:
     wd = WebDriver()
     wd.implicitly_wait(60)
