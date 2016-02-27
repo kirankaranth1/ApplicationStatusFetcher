@@ -1,0 +1,15 @@
+University Name: UC San Diego
+---------------------------------------------------------------------------
+Status Check URL: https://apply.grad.ucsd.edu/login
+Username: EnterUsernameHere
+Password: EnterPasswordHere
+Username Xpath: /html/body/div/div/main/div/div/div/form/div[1]/input
+Password Xpath: /html/body/div/div/main/div/div/div/form/div[2]/input
+Submit button Xpath: /html/body/div/div/main/div/div/div/form/input[3]
+Status Xpath: /html/body/div[1]/div/main/div/div/div/table/tbody/tr/td[5] 
+---------------------------------------------------------------------------
+
+
+
+
+EndOfUniversityDetails <-- Leave this line as is
