@@ -9,7 +9,38 @@ Submit button Xpath: /html/body/div/div/main/div/div/div/form/input[3]
 Status Xpath: /html/body/div[1]/div/main/div/div/div/table/tbody/tr/td[5] 
 ---------------------------------------------------------------------------
 
+---------------------------------------------------------------------------
+University Name: UC Irvine
+---------------------------------------------------------------------------
+Status Check URL: https://gats.ics.uci.edu/tracker/
+Username: EnterUsernameHere
+Password: EnterPasswordHere
+Username Xpath: /html/body/table[2]/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/form/table/tbody/tr[1]/td[2]/input
+Password Xpath: /html/body/table[2]/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/form/table/tbody/tr[2]/td[2]/input
+Submit button Xpath: /html/body/table[2]/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/form/table/tbody/tr[3]/td/input
+Status Xpath: html/body/table[2]/tbody/tr/td/p[2]/b
 
+---------------------------------------------------------------------------
+University Name: UT Austin
+---------------------------------------------------------------------------
+Status Check URL: https://utdirect.utexas.edu/apps/adm/mystatus/admission/01/
+Username: EnterUsernameHere
+Password: EnterPasswordHere
+Username Xpath: /html/body/div/div[3]/div[1]/form/div[1]/input
+Password Xpath: /html/body/div/div[3]/div[1]/form/div[2]/input
+Submit button Xpath: /html/body/div/div[3]/div[1]/form/div[3]/div/input
+Status Xpath: /html/body/div[6]/div[2]/div[2]/div/div/div[2]/div[3]/div[1]/div/dl/dd[2]/span
+
+---------------------------------------------------------------------------
+University Name: University of Chicago
+---------------------------------------------------------------------------
+Status Check URL: https://apply-psd.uchicago.edu/account/login
+Username: EnterUsernameHere
+Password: EnterPasswordHere
+Username Xpath: /html/body/div[2]/div[2]/form/table/tbody/tr[1]/td/input
+Password Xpath: /html/body/div[2]/div[2]/form/table/tbody/tr[2]/td/input
+Submit button Xpath: /html/body/div[2]/div[2]/form/div[1]/button
+Status Xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[2]
 
 
 EndOfUniversityDetails <-- Leave this line as is
