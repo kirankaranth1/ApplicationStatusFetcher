@@ -107,7 +107,6 @@ def parse_input(filename):
             if line.startswith("Additional Field Value:"):
                 add_val=line.split("Additional Field Value:")[1].strip() 
 
-
-input_file=sys.argv[1]                
-parse_input(input_file)
-#get_status("https://apply.grad.ucsd.edu/login","session_email","kirankaranth1@gmail.com","session_password","Keshav1!","/html/body/div/div/main/div/div/div/form/input[3]","/html/body/div[1]/div/main/div/div/div/table/tbody/tr/td[5]")
+if __name__ == "__main__":
+    input_file=sys.argv[1]                
+    parse_input(input_file)
