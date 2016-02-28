@@ -34,8 +34,8 @@ Additional Field: 		Xpath for the additonal element(if any) that needs to be cli
 Additional Field Value: Value that needs to be input to the Additional Field. If a click is required on Additional Field set this to _click_. If Additional Field is NA, set this to NA too. 
 ```
  
-Multiple configurations in the above format can be present in the input config file. For an example, see MyUnivs.config. 
-The configurations for the following Universitiy portals already exist in MyUnivs.config
+Multiple configurations in the above format can be present in the input config file (see MyUnivs.config). 
+The configurations for the following University portals already exist in MyUnivs.config
 * University of Texas Austin
 * University of Caligornia, San Diego
 * University of California, Irvine
@@ -44,6 +44,6 @@ The configurations for the following Universitiy portals already exist in MyUniv
 * Texas A&M , CollegeStation (CSE Portal)
 * University of Chicago
 * North Carolina State University (Gradwatch Portal)
-* University of Caligornia, Santa Barbara
+* University of California, Santa Barbara
 
 
