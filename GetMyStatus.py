@@ -2,12 +2,12 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 import traceback
 import sys
 
 success = True
-
 if len(sys.argv) > 2:
     if (sys.argv[2] == "silent"):
         wd = webdriver.PhantomJS() # or add to your PATH
@@ -21,7 +21,6 @@ else:
     wd = WebDriver()
     wd.implicitly_wait(60)
 
-
 def is_alert_present(wd):
     try:
         wd.switch_to_alert().text
@@ -30,7 +29,6 @@ def is_alert_present(wd):
         return False
 
 def get_status(univ_name,url,username_id,username,password_id,password,submitXpath,intclick,statusXpath,add,add_val):
-    
     try:
         print("----------------------------------------------------------")
         print("Logging into %s portal" %(univ_name))
@@ -53,17 +51,28 @@ def get_status(univ_name,url,username_id,username,password_id,password,submitXpa
         wd.find_element_by_xpath(password_id).click()
         wd.find_element_by_xpath(password_id).clear()
         wd.find_element_by_xpath(password_id).send_keys(password)
+
         
-        wd.find_element_by_xpath(submitXpath).click()
+        if submitXpath != "_return_":
+            wd.find_element_by_xpath(submitXpath).click()
+        else:
+            wd.find_element_by_xpath(password_id).send_keys(Keys.RETURN)
+            time.sleep(5)
         if intclick != "NA":
             wd.find_element_by_xpath(intclick).click()
-            time.sleep(10)
+            time.sleep(4)
         status=wd.find_element_by_xpath(statusXpath).text
 
         print("Status of application: %s" %(str(status))) 
     except:
         print("Error fetching details from portal %s" %(univ_name))
+        if (sys.argv[2] == "silent"):
+            wd.save_screenshot('screen_error.png')
     wd.delete_all_cookies()
+
+def get_status_test(url,username_id,username,password_id,password,submitXpath,statusXpath):
+    print(url,username_id,username,password_id,password,submitXpath,statusXpath)
+
 
 def parse_input(filename):
     inputFile = open(filename, 'r')
@@ -71,13 +80,13 @@ def parse_input(filename):
     for line in inputFile:
         line=str(line).strip()
         if line.startswith("University Name:") or line.startswith("EndOfUniversityDetails"):
-            #print(line)
             if(univ_count > 0 ):
-                #print("Getting %s details" %(univ_name))
                 try:
                     get_status(univ_name,url,username_id,username,password_id,password,submitXpath,intclick,statusXpath,add,add_val)
                 except:
                     print("Error getting status from %s" %(univ_name))
+                    if (sys.argv[2] == "silent"):
+                        wd.save_screenshot('screen_error_fetching_status.png')
             univ_count+=1
             try:
                 univ_name=line.split("University Name:")[1]
@@ -107,6 +116,7 @@ def parse_input(filename):
             if line.startswith("Additional Field Value:"):
                 add_val=line.split("Additional Field Value:")[1].strip() 
 
-if __name__ == "__main__":
-    input_file=sys.argv[1]                
-    parse_input(input_file)
+
+input_file=sys.argv[1]                
+parse_input(input_file)
+
