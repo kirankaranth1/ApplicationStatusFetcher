@@ -8,7 +8,7 @@ import sys
 
 success = True
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     if (sys.argv[2] == "silent"):
         wd = webdriver.PhantomJS() # or add to your PATH
         wd.set_window_size(1024, 768) # optional
@@ -63,7 +63,7 @@ def get_status(univ_name,url,username_id,username,password_id,password,submitXpa
         print("Status of application: %s" %(str(status))) 
     except:
         print("Error fetching details from portal %s" %(univ_name))
-
+    wd.delete_all_cookies()
 
 def parse_input(filename):
     inputFile = open(filename, 'r')
