@@ -10,6 +10,7 @@ python GetMyStatus.py MyUnivs.config <silent>
 Requirements    
 --------
  * [Python 2.7+](https://www.python.org/downloads/)
+ * [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
  * [Selenium Webdriver](http://selenium-python.readthedocs.org/installation.html)
  * [PhantomJS in python](http://stackoverflow.com/questions/13287490/is-there-a-way-to-use-phantomjs-in-python) (Optional - Required only during silent run)
 
