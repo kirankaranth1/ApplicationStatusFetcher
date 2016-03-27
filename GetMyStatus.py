@@ -85,8 +85,9 @@ def parse_input(filename):
                     get_status(univ_name,url,username_id,username,password_id,password,submitXpath,intclick,statusXpath,add,add_val)
                 except:
                     print("Error getting status from %s" %(univ_name))
-                    if (sys.argv[2] == "silent"):
-                        wd.save_screenshot('screen_error_fetching_status.png')
+                    if len(sys.argv) > 2:
+                        if (sys.argv[2] == "silent"):
+                            wd.save_screenshot('screen_error_fetching_status.png')
             univ_count+=1
             try:
                 univ_name=line.split("University Name:")[1]
@@ -119,4 +120,5 @@ def parse_input(filename):
 
 input_file=sys.argv[1]                
 parse_input(input_file)
+wd.quit()
 
